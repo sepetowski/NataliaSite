@@ -3,10 +3,16 @@ import { Line } from '../common/Line';
 import instargramIcon from '../../assets/svg/instagram.svg';
 import { navItems } from '../../utils/utils';
 import { NavItem } from './NavItem';
+import { motion } from 'framer-motion';
+import { HomeAnim} from '../../animations/animations';
 
 export const DesktopNavigation = () => {
 	return (
-		<nav className='fixed top-0 left-0 w-1/3 max-w-sm h-screen flex '>
+		<motion.nav
+			variants={HomeAnim}
+			initial='hidden'
+			animate="visible"
+			className='fixed top-0 left-0 w-1/3 max-w-sm h-screen flex z-50'>
 			<Line isHorizontal={false} left='left-7' />
 			<div className='w-4/5 h-full bg-white '>
 				<div className='h-20  flex justify-center items-center relative'>
@@ -25,10 +31,10 @@ export const DesktopNavigation = () => {
 				</div>
 				<div className='text-white flex flex-col gap-8 mt-10 ml-6'>
 					{navItems.map((item) => (
-						<NavItem  key={item.id} name={item.name} to={item.to} useRooting={item.useRooting} desktop={true} />
+						<NavItem key={item.id} name={item.name} to={item.to} desktop={true} />
 					))}
 				</div>
 			</div>
-		</nav>
+		</motion.nav>
 	);
 };

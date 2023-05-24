@@ -4,7 +4,7 @@ import model from '../../../assets/imgs/mobileHeaderModel.jpg';
 
 export const MobileHeader = () => {
 	return (
-		<header className='h-screen w-full flex flex-col'>
+		<header className='h-screen w-full flex flex-col '>
 			<div className='w-full h-16 md:h-20 '></div>
 			<div className='w-full h-full flex'>
 				<div className='h-full w-1/2 flex flex-col '>

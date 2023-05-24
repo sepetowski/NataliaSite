@@ -8,7 +8,7 @@ interface Props {
 
 export const MobileNavigationBar = ({ onNavOpen }: Props) => {
 	return (
-		<div className='fixed top-0 left-0 w-full flex justify-between items-center h-16 md:h-20'>
+		<div className='fixed top-0 left-0 w-full flex justify-between items-center h-16 md:h-20 z-30'>
 			<div className='w-1/2 h-full  flex justify-center items-center relative bg-white'>
 				<h1 className='font-dancing  text-2xl md:text-3xl'>NP Model</h1>
 

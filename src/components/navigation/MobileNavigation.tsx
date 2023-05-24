@@ -14,8 +14,6 @@ interface Props {
 	onNavClose: () => void;
 }
 
-
-
 export const MobileNavigation = ({ onNavClose }: Props) => {
 	return (
 		<motion.nav
@@ -25,12 +23,12 @@ export const MobileNavigation = ({ onNavClose }: Props) => {
 			exit='exit'
 			key={'nav'}
 			onClick={onNavClose}
-			className='fixed top-0 left-0 h-screen w-full bg-black bg-opacity-60 flex justify-end '>
+			className='fixed top-0 left-0 h-screen w-full bg-black bg-opacity-60 flex justify-end z-50 '>
 			<motion.div
 				variants={navAnim}
 				onClick={stopPropagationHandler}
 				className='h-full w-1/2 bg-black text-white  '>
-				<div className='h-16  w-full flex pl-4 relative'>
+				<div className='h-16 md:h-20  w-full flex pl-4 relative z-50'>
 					<motion.button variants={fromRightNavItemsAnim} onClick={onNavClose}>
 						<img className='w-10' src={closeIcon} alt='close navigation button' />
 					</motion.button>
@@ -40,13 +38,7 @@ export const MobileNavigation = ({ onNavClose }: Props) => {
 					variants={staggerChildren}
 					className='h-full w-full flex flex-col p-4 mt-10 gap-5'>
 					{navItems.map((item) => (
-						<NavItem
-							key={item.id}
-							name={item.name}
-							to={item.to}
-							useRooting={item.useRooting}
-							onClick={onNavClose}
-						/>
+						<NavItem key={item.id} name={item.name} to={item.to} onClick={onNavClose} />
 					))}
 				</motion.div>
 			</motion.div>

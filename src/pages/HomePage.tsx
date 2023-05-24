@@ -1,14 +1,24 @@
-import { DesktopHeader } from '../components/home/header/DesktopHeader';
-import { MobileHeader } from '../components/home/header/MobileHeader';
+import { motion } from 'framer-motion';
+import { desktopPageAnim, mobilePageAnim } from '../animations/animations';
+import { DesktopHeader } from '../components/home/desktopHeader/DesktopHeader';
+import { MobileHeader } from '../components/home/mobileHeader/MobileHeader';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export const HomePage = () => {
-	const isMobile = useMediaQuery('(max-width: 992px)');
+	const isMobile = useMediaQuery('(min-width: 1024px)');
 
 	return (
 		<>
-			{isMobile && <MobileHeader />}
-			{!isMobile && <DesktopHeader />}
+			{!isMobile && (
+				<motion.div variants={mobilePageAnim} initial='hidden' animate='visible' exit='exit'>
+					<MobileHeader />
+				</motion.div>
+			)}
+			{isMobile && (
+				<motion.div variants={desktopPageAnim} initial='hidden' animate='visible' exit='exit'>
+					<DesktopHeader />
+				</motion.div>
+			)}
 		</>
 	);
 };

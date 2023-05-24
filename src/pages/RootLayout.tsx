@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 import { DesktopNavigation } from '../components/navigation/DesktopNavigation';
 export const RootLayout = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
-	const isMobile = useMediaQuery('(max-width: 992px)');
+	const isMobile = useMediaQuery('(min-width: 1024px)');
 
 	const closeNavHanlder = () => {
 		setIsNavOpen(false);
@@ -18,7 +18,7 @@ export const RootLayout = () => {
 
 	return (
 		<>
-			{isMobile && (
+			{!isMobile && (
 				<>
 					<MobileNavigationBar onNavOpen={openNavHandler} />
 					<AnimatePresence>
@@ -26,7 +26,7 @@ export const RootLayout = () => {
 					</AnimatePresence>
 				</>
 			)}
-			{!isMobile && <DesktopNavigation />}
+			{isMobile && <DesktopNavigation />}
 			<Outlet />
 		</>
 	);
