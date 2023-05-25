@@ -14,7 +14,7 @@ export const NavItem = ({ to, name, onClick, desktop = false }: Props) => {
 		<motion.div variants={fromRightNavItemsAnim} className='w-96'>
 			<Link
 				onClick={onClick}
-				className={`uppercase transition-[letter-spacing] duration-300 text-xl hover:tracking-[1rem] ${
+				className={`uppercase transition-[letter-spacing] duration-300 text-xl md:hover:tracking-[1rem] ${
 					desktop ? 'p-2  bg-black bg-opacity-70 shadow-md' : ''
 				}`}
 				to={to}>

@@ -9,7 +9,7 @@ interface Props {
 export const InfoItem = ({ infoName, infoDeatil }: Props) => {
 	return (
 		<motion.p variants={fromTopItemsAnim} className='uppercase md:text-lg lg:text-xl '>
-			{infoName} <span className='text-neutral-600'>{infoDeatil}</span>
+			{infoName} <span className='text-neutral-600 font-popins'>{infoDeatil}</span>
 		</motion.p>
 	);
 };

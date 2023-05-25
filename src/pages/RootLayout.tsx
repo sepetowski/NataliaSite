@@ -3,11 +3,13 @@ import { MobileNavigationBar } from '../components/navigation/MobileNaviagtionBa
 import { MobileNavigation } from '../components/navigation/MobileNavigation';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { AnimatePresence } from 'framer-motion';
-import { Outlet } from 'react-router-dom';
 import { DesktopNavigation } from '../components/navigation/DesktopNavigation';
+
 export const RootLayout = () => {
+
 	const [isNavOpen, setIsNavOpen] = useState(false);
-	const isMobile = useMediaQuery('(min-width: 1024px)');
+	const isDesktop = useMediaQuery('(min-width: 1024px)');
+	
 
 	const closeNavHanlder = () => {
 		setIsNavOpen(false);
@@ -18,7 +20,7 @@ export const RootLayout = () => {
 
 	return (
 		<>
-			{!isMobile && (
+			{!isDesktop && (
 				<>
 					<MobileNavigationBar onNavOpen={openNavHandler} />
 					<AnimatePresence>
@@ -26,8 +28,7 @@ export const RootLayout = () => {
 					</AnimatePresence>
 				</>
 			)}
-			{isMobile && <DesktopNavigation />}
-			<Outlet />
+			{isDesktop && <DesktopNavigation />}
 		</>
 	);
 };

@@ -4,19 +4,22 @@ import instargramIcon from '../../assets/svg/instagram.svg';
 import { navItems } from '../../utils/utils';
 import { NavItem } from './NavItem';
 import { motion } from 'framer-motion';
-import { HomeAnim} from '../../animations/animations';
+import { HomeAnim } from '../../animations/animations';
+import { Link } from 'react-router-dom';
 
 export const DesktopNavigation = () => {
 	return (
 		<motion.nav
 			variants={HomeAnim}
 			initial='hidden'
-			animate="visible"
+			animate='visible'
 			className='fixed top-0 left-0 w-1/3 max-w-sm h-screen flex z-50'>
 			<Line isHorizontal={false} left='left-7' />
 			<div className='w-4/5 h-full bg-white '>
 				<div className='h-20  flex justify-center items-center relative'>
-					<h1 className='font-dancing  text-4xl'>NP Model</h1>
+					<Link to='/'>
+						<h1 className='font-dancing  text-4xl transition-[letter-spacing] duration-300 hover:tracking-[0.5rem]'>NP Model</h1>
+					</Link>
 					<Line isHorizontal={false} left='left-7' />
 					<Line left='left-0' />
 				</div>

@@ -7,13 +7,17 @@
 	margin: 0;
 	padding: 0;
 }
-html{
+html {
 	scroll-behavior: smooth;
 }
 
 body {
 	font-family: 'Baskervville', serif;
 }
-.clip{
+.clip {
 	clip-path: inset(0);
+}
+
+.gallery {
+	grid-auto-rows: 500px 250px;
 }

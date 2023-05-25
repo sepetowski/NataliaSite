@@ -5,6 +5,7 @@ export default {
 		extend: {},
 		fontFamily: {
 			dancing: ['Dancing Script', 'cursive'],
+			popins: ['Poppins', 'sans-serif'],
 		},
 		screens: {
 			xsm: '360px',

@@ -54,12 +54,10 @@ export const mobilePageAnim: Variants = {
 	hidden: {
 		opacity: 0,
 		y: 300,
-		
 	},
 	visible: {
 		opacity: 1,
 		y: 0,
-		
 
 		transition: {
 			duration: 1,
@@ -118,27 +116,15 @@ export const navAnim: Variants = {
 	},
 };
 export const HomeAnim: Variants = {
-	hidden: {
-		
-		x: "-100%",
-	},
+	hidden: {},
 	visible: {
 		opacity: 1,
 		x: 0,
 		transition: {
-			duration: 1,
+			duration: 0.8,
 			ease: 'easeOut',
 			when: 'beforeChildren',
-			staggerChildren: 0.6,
-			delay: 1
-		},
-	},
-	exit: {
-		opacity: 0,
-		x: "100%",
-		transition: {
-			duration: 0.6,
-			ease: 'easeOut',
+			staggerChildren: 0.5,
 		},
 	},
 };

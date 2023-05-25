@@ -5,22 +5,22 @@ import { fromRightNavItemsAnim, staggerChildren } from '../../../animations/anim
 const infoDetails = [
 	{
 		infoName: 'height',
-		infoDetail: '1,74',
+		infoDetail: '174',
 	},
 	{
 		infoName: 'bust',
-		infoDetail: '76',
+		infoDetail: '77',
 	},
 	{
 		infoName: 'waist',
-		infoDetail: '60',
+		infoDetail: '61',
 	},
 	{
 		infoName: 'hips',
-		infoDetail: '89',
+		infoDetail: '90',
 	},
 	{
-		infoName: 'shoes',
+		infoName: 'shoe size',
 		infoDetail: '39',
 	},
 	{
@@ -29,7 +29,7 @@ const infoDetails = [
 	},
 	{
 		infoName: 'hair',
-		infoDetail: 'blonde',
+		infoDetail: 'blond',
 	},
 ];
 

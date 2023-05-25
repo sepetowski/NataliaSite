@@ -10,11 +10,14 @@ import {
 	staggerChildren,
 } from '../../animations/animations';
 
+
 interface Props {
 	onNavClose: () => void;
 }
 
 export const MobileNavigation = ({ onNavClose }: Props) => {
+	
+	
 	return (
 		<motion.nav
 			variants={navOpacityAnim}
