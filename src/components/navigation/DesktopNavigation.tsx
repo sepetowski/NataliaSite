@@ -6,6 +6,7 @@ import { NavItem } from './NavItem';
 import { motion } from 'framer-motion';
 import { HomeAnim } from '../../animations/animations';
 import { Link } from 'react-router-dom';
+import hastags from "../../assets/imgs/desktopNavHashtags.png"
 
 export const DesktopNavigation = () => {
 	return (
@@ -13,6 +14,7 @@ export const DesktopNavigation = () => {
 			variants={HomeAnim}
 			initial='hidden'
 			animate='visible'
+			exit="exit"
 			className='fixed top-0 left-0 w-1/3 max-w-sm h-screen flex z-50'>
 			<Line isHorizontal={false} left='left-7' />
 			<div className='w-4/5 h-full bg-white '>
@@ -26,17 +28,18 @@ export const DesktopNavigation = () => {
 
 				<InfoBox />
 			</div>
-			<div className='w-1/5 h-full bg-black'>
-				<div className='h-20 w-full  flex justify-center items-center'>
+			<div className='w-1/5 h-full  relative'>
+				<div className='h-20 w-full  flex justify-center items-center z-10'>
 					<a href='https://instagram.com/iamnathalie_?igshid=NTc4MTIwNjQ2YQ==' target='_blank'>
 						<img className='w-10' src={instargramIcon} alt='instagram icon' />
 					</a>
 				</div>
-				<div className='text-white flex flex-col gap-8 mt-10 ml-6'>
+				<div className='text-white flex flex-col gap-8 mt-10 ml-6 z-20'>
 					{navItems.map((item) => (
 						<NavItem key={item.id} name={item.name} to={item.to} desktop={true} />
 					))}
 				</div>
+				<img className='absolute bottom-0 left-0 w-full h-full object-cover z-[-20]' src={hastags} alt="" />
 			</div>
 		</motion.nav>
 	);
