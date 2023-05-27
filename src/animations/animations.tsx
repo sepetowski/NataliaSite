@@ -110,7 +110,7 @@ export const galleryAnim = {
 		opacity: 1,
 
 		transition: {
-			duration: 0.4,
+			duration: 1,
 			ease: 'easeIn',
 			when: 'beforeChildren',
 			staggerChildren: 0.5,

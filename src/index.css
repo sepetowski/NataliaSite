@@ -21,3 +21,70 @@ body {
 .gallery {
 	grid-auto-rows: 500px 250px;
 }
+
+.spanCol2 {
+	grid-column: span 2 / span 2;
+}
+.spanCol3 {
+	grid-column: span 3 / span 3;
+}
+
+.spanRow2 {
+	grid-row: span 2 / span 2;
+}
+.spanRow3 {
+	grid-row: span 3 / span 3;
+}
+.spanRow4 {
+	grid-row: span 4 / span 4;
+}
+.colStart1{
+	grid-column-start: 1;
+}
+.colStart4{
+	grid-column-start: 4;
+}
+.colStart5{
+	grid-column-start: 5;
+}
+.colStart6{
+	grid-column-start: 6;
+}
+.colStart7{
+	grid-column-start: 7;
+}
+
+.rowStart3{
+	grid-row-start: 3;
+}
+.rowStart4{
+	grid-row-start: 4;
+}
+.rowStart5{
+	grid-row-start: 5;
+}
+.rowStart6{
+	grid-row-start: 6;
+}
+.rowStart7{
+	grid-row-start: 7;
+}
+.rowStart8{
+	grid-row-start: 8;
+}
+.rowStart9{
+	grid-row-start: 9;
+}
+.rowStart10{
+	grid-row-start: 10;
+}
+.rowStart11{
+	grid-row-start: 11;
+}
+.rowStart12{
+	grid-row-start: 12;
+}
+
+
+
+

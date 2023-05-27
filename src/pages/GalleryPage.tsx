@@ -44,12 +44,17 @@ export const GalleryPage = () => {
 
 	useEffect(() => {
 		const getPhotos = async () => {
-			const res = await fetch('/images.json');
-			const data = await res.json();
+			try {
+				const res = await fetch('/images.json');
+				const data = await res.json();
 
-			setPhotosArray(data);
+				setPhotosArray(data);
+			} catch (err) {
+				alert("Coudn't not load images, please reset the page");
+			}
 		};
 
+		
 		getPhotos();
 	}, []);
 
