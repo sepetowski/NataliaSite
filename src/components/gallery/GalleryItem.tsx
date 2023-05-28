@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { galleryItemsAnim } from '../../animations/animations';
 import zoomBlack from '../../assets/svg/zoom-black.svg';
 import zoomWhite from '../../assets/svg/zoom-white.svg';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
-import { useState } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
+
 
 interface Props {
 	url: string;
@@ -39,7 +39,7 @@ export const GalleryItem = ({ url, span, alt, onPhotoZoom, id, isZoomIconWhite }
 					
 				</div>
 				<div className='absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] pointer-events-none opacity-0 transition-opacity duration-700 group-hover:opacity-100 text-white backdrop-blur-sm w-full h-full flex justify-center items-center'>
-					<img className='w-16' src={isZoomIconWhite ? zoomWhite : zoomBlack} alt='zoom icon' />
+					<img className='w-16 sm:w-10 lg:w-16' src={isZoomIconWhite ? zoomWhite : zoomBlack} alt='zoom icon' />
 				</div>
 			</div>
 		</motion.div>

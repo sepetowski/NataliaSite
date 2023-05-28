@@ -9,11 +9,13 @@
 }
 html {
 	scroll-behavior: smooth;
+
 }
 
 body {
 	font-family: 'Baskervville', serif;
 }
+
 .clip {
 	clip-path: inset(0);
 }

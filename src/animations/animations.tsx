@@ -23,6 +23,21 @@ export const navOpacityAnim: Variants = {
 		},
 	},
 };
+export const opacityAnim: Variants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+
+		transition: {
+			duration: 1,
+			ease: 'easeOut',
+			when: 'beforeChildren',
+			staggerChildren: 0.5,
+		},
+	},
+};
 
 export const desktopPageAnim: Variants = {
 	hidden: {
@@ -95,7 +110,7 @@ export const GalleryPageAnim: Variants = {
 	},
 	exit: {
 		opacity: 0,
-		x: -1000,
+		x: 1000,
 		transition: {
 			duration: 1,
 			ease: 'easeOut',
@@ -162,7 +177,7 @@ export const HomeAnim: Variants = {
 	},
 	visible: {
 		opacity: 1,
-		x: 0,
+
 		transition: {
 			duration: 1,
 			ease: 'easeOut',

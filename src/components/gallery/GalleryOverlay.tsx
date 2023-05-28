@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { galleryOpacityAnim, zoomedPhotoAnim } from '../../animations/animations';
 import { useState } from 'react';
+import arrowRight from '../../assets/svg/arrowRight.svg';
+import arrowLeft from '../../assets/svg/arrowLeft.svg';
+import arrowBack from '../../assets/svg/arrowBack.svg';
 
 interface Props {
 	url: string;
@@ -18,9 +21,6 @@ const swipePower = (offset: number, velocity: number) => {
 
 export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext }: Props) => {
 	const [direction, setDirection] = useState(1);
-	const stopPropagationHanlder = (e: React.MouseEvent<HTMLDivElement>) => {
-		e.stopPropagation();
-	};
 
 	const nextImgHandler = () => {
 		setDirection(1);
@@ -36,12 +36,9 @@ export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext
 			initial='hidden'
 			animate='visible'
 			exit='exit'
-			onClick={onClose}
 			className='fixed top-0 left-0 h-screen w-full z-[100] bg-black   flex justify-center items-center'>
 			<AnimatePresence initial={false} custom={direction}>
-				<div
-					onClick={stopPropagationHanlder}
-					className={`bg-whitec ${isHorizontal ? 'sm:w-10/12 sm:h-full' : ''} `}>
+				<div className={`bg-whitec ${isHorizontal ? 'sm:w-10/12 sm:h-full' : ''} `}>
 					<motion.img
 						key={url}
 						variants={zoomedPhotoAnim}
@@ -74,23 +71,25 @@ export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext
 				</div>
 			</AnimatePresence>
 
-			<div
-				onClick={stopPropagationHanlder}
-				className='absolute top-10 left-10 bg-white rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16'>
-				<button onClick={onClose}>Close</button>
-			</div>
+			
+			<button
+				onClick={onClose}
+				className='absolute top-5 left-2 md:left-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
+				<img className='w-1/2' src={arrowBack} alt='arrow back icon' />
+			</button>
 
-			<div
-				onClick={stopPropagationHanlder}
-				className=' absolute top-1/2 translate-y-[-50%] left-10 bg-white rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16'>
-				<button onClick={prevImgHandler}>Prev</button>
-			</div>
+			
+			<button
+				onClick={prevImgHandler}
+				className='absolute top-1/2 translate-y-[-50%] left-2 md:left-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
+				<img className='w-1/2' src={arrowLeft} alt='arrow left icon' />
+			</button>
 
-			<div
-				onClick={stopPropagationHanlder}
-				className='absolute top-1/2 translate-y-[-50%] right-10 bg-white rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16'>
-				<button onClick={nextImgHandler}>Next</button>
-			</div>
+			<button
+				onClick={nextImgHandler}
+				className='absolute top-1/2 translate-y-[-50%] right-2 md:right-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
+				<img className='w-1/2' src={arrowRight} alt='arrow right icon' />
+			</button>
 		</motion.div>
 	);
 };

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { Line } from '../common/Line';
 import { GalleryItem } from './GalleryItem';
 import { Photo } from '../../types/types';
@@ -11,10 +11,7 @@ interface Props {
 }
 
 export const Gallery = ({ photos, onPhotoZoom }: Props) => {
-	const navigate = useNavigate();
-	const toPrevSiteHandler = () => {
-		navigate(-1);
-	};
+	
 	return (
 		<>
 			<nav className='fixed top-0 left-0 h-16 md:h-20 w-full flex items-center justify-between p-6 md:p-12 bg-white z-50'>
@@ -23,11 +20,10 @@ export const Gallery = ({ photos, onPhotoZoom }: Props) => {
 						NP Model
 					</h1>
 				</Link>
-				<p
-					onClick={toPrevSiteHandler}
-					className=' text-2xl md:text-3xl lg:text-4xl duration-300 hover:tracking-[0.5rem] cursor-pointer'>
+				<Link
+					className=' text-2xl md:text-3xl lg:text-4xl duration-300 hover:tracking-[0.5rem] cursor-pointer' to={'/'}>
 					Back
-				</p>
+				</Link>
 				<Line isHorizontal={false} left='left-7' />
 				<Line left='left-0' />
 			</nav>

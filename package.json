@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-hook/media-query": "^1.1.1",
     "framer-motion": "^10.12.12",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

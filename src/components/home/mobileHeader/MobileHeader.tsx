@@ -10,7 +10,7 @@ export const MobileHeader = () => {
 				<div className='h-full w-1/2 flex flex-col '>
 					<InfoBox />
 				</div>
-				<div className='h-full w-1/2 flex flex-col'>
+				<div className='h-full w-1/2 flex flex-col '>
 					<div className='w-full h-2/3 '>
 						<img className='h-full w-full object-cover ' src={model} alt='model image' />
 					</div>
