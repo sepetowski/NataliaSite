@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { AppContex } from './appStore';
+import { Photo } from '../types/types';
 
 interface Props {
 	children: React.ReactNode;
 }
 
 export const AppStoreProvider = ({ children }: Props) => {
-	const [activePage, setActivePage] = useState('home');
+	const [photosArray, setPhotosArray] = useState<Photo[]>([]);
 
-	const setActivePageHandler = (page: string) => {
-		setActivePage(page);
+	const setPhotosArrayHandler = (photos: Photo[]) => {
+		setPhotosArray(photos);
 	};
 
 	const ctx = {
-		currentActivePage: activePage,
-		setCurrentActivePage: setActivePageHandler,
+		photosArray: photosArray,
+		setPhotosArray: setPhotosArrayHandler,
 	};
 
 	return <AppContex.Provider value={ctx}>{children}</AppContex.Provider>;

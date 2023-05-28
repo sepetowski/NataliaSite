@@ -8,7 +8,7 @@ import { ContactPage } from '../../pages/ContactPage';
 const routes = [
 	{ path: '/', name: 'home', Component: HomePage },
 	{ path: '/about', name: 'about', Component: AboutPage },
-	{ path: '/gallery', name: 'gallery', Component: GalleryPage },
+	{ path: '/gallery', name: 'gallery', Component: GalleryPage  },
 	{ path: '/contact', name: 'contact', Component: ContactPage },
 ];
 

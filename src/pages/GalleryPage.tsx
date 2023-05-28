@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Gallery } from '../components/gallery/Gallery';
 import { GalleryOverLay } from '../components/gallery/GalleryOverlay';
 import { Photo } from '../types/types';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GalleryPageAnim, desktopPageAnim } from '../animations/animations';
+import { AppContex } from '../store/appStore';
 
 export const GalleryPage = () => {
-	const [photosArray, setPhotosArray] = useState<Photo[]>([]);
+	const { photosArray } = useContext(AppContex);
 	const [zoomedPhotoUrl, setZoomedPhotoUrl] = useState('');
 	const [zoomedPhotoAlt, setZoomedPhotoAlt] = useState('');
 	const [zoomedPhotoIsHorizontal, setZoomedPhotoIsHorizontal] = useState(false);
@@ -41,22 +42,6 @@ export const GalleryPage = () => {
 	const closeOverleyHandler = () => {
 		setIsZoomed(false);
 	};
-
-	useEffect(() => {
-		const getPhotos = async () => {
-			try {
-				const res = await fetch('/images.json');
-				const data = await res.json();
-
-				setPhotosArray(data);
-			} catch (err) {
-				alert("Coudn't not load images, please reset the page");
-			}
-		};
-
-		
-		getPhotos();
-	}, []);
 
 	return (
 		<motion.div variants={GalleryPageAnim} initial='hidden' animate='visible' exit='exit'>
