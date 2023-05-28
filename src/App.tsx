@@ -25,7 +25,7 @@ export const App = () => {
 
 	return (
 		<>
-			{pathname !== '/gallery' && <RootLayout />}
+			{(pathname === '/' || pathname === '/about' || pathname === '/contact') && <RootLayout />}
 			<Content />
 		</>
 	);

@@ -4,12 +4,14 @@ import { HomePage } from '../../pages/HomePage';
 import { AboutPage } from '../../pages/AboutPage';
 import { GalleryPage } from '../../pages/GalleryPage';
 import { ContactPage } from '../../pages/ContactPage';
+import { ErrorPage } from '../../pages/ErrorPage';
 
 const routes = [
 	{ path: '/', name: 'home', Component: HomePage },
 	{ path: '/about', name: 'about', Component: AboutPage },
 	{ path: '/gallery', name: 'gallery', Component: GalleryPage  },
 	{ path: '/contact', name: 'contact', Component: ContactPage },
+	{ path: '*', name: 'error', Component: ErrorPage },
 ];
 
 const routeComponents = routes.map(({ path, name, Component }) => (
