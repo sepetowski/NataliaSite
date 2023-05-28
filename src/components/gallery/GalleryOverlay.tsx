@@ -64,7 +64,7 @@ export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext
 								setDirection(-1);
 							}
 						}}
-						className='w-full h-full object-cover '
+						className='w-full h-full object-cover cursor-grab '
 						src={url}
 						alt={alt}
 					/>
@@ -75,20 +75,20 @@ export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext
 			<button
 				onClick={onClose}
 				className='absolute top-5 left-2 md:left-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
-				<img className='w-1/2' src={arrowBack} alt='arrow back icon' />
+				<img className='w-1/2' src={arrowBack} alt='arrow back icon p-2' />
 			</button>
 
 			
 			<button
 				onClick={prevImgHandler}
 				className='absolute top-1/2 translate-y-[-50%] left-2 md:left-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
-				<img className='w-1/2' src={arrowLeft} alt='arrow left icon' />
+				<img className='w-1/2' src={arrowLeft} alt='arrow left icon p-2' />
 			</button>
 
 			<button
 				onClick={nextImgHandler}
 				className='absolute top-1/2 translate-y-[-50%] right-2 md:right-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
-				<img className='w-1/2' src={arrowRight} alt='arrow right icon' />
+				<img className='w-1/2' src={arrowRight} alt='arrow right icon p-2' />
 			</button>
 		</motion.div>
 	);
