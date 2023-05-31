@@ -6,7 +6,7 @@ import aboutBlackImg from '../../assets/imgs/aboutBlackImg.jpg';
 
 export const About = () => {
 	return (
-		<main className='min-h-screen w-full flex flex-col lg:flex-row'>
+		<main className='min-h-screen w-full flex flex-col lg:flex-row '>
 			<div className='w-full h-16 md:h-20 lg:h-screen lg:w-1/3 lg:max-w-sm '></div>
 			<div className='flex-grow flex  w-full'>
 				<div className='hidden lg:block w-2/3 h-screen '>

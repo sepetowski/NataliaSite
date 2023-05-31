@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Gallery } from '../components/gallery/Gallery';
 import { GalleryOverLay } from '../components/gallery/GalleryOverlay';
-import { Photo } from '../types/types';
 import { AnimatePresence, motion } from 'framer-motion';
-import { GalleryPageAnim, desktopPageAnim } from '../animations/animations';
+import { GalleryPageAnim } from '../animations/animations';
 import { AppContex } from '../store/appStore';
 
 export const GalleryPage = () => {
@@ -22,6 +21,7 @@ export const GalleryPage = () => {
 		setZoomedPhotoId(photo.id);
 		setZoomedPhotoIsHorizontal(photo.isHorizontal);
 		setIsZoomed(true);
+		document.body.style.overflow = 'hidden';
 	};
 
 	const nextPhotoHanlder = () => {
@@ -41,7 +41,13 @@ export const GalleryPage = () => {
 
 	const closeOverleyHandler = () => {
 		setIsZoomed(false);
+		document.body.style.overflow = 'auto';
 	};
+
+	useEffect(() => {
+		document.body.classList.remove('scrollbar-none');
+		document.body.classList.add('scrollbar-thin', 'scrollbar-thumb-neutral-400');
+	}, []);
 
 	return (
 		<motion.div variants={GalleryPageAnim} initial='hidden' animate='visible' exit='exit'>

@@ -9,11 +9,11 @@
 }
 html {
 	scroll-behavior: smooth;
-
 }
 
 body {
 	font-family: 'Baskervville', serif;
+	-webkit-overflow-scrolling: touch;
 }
 
 .clip {
@@ -40,53 +40,49 @@ body {
 .spanRow4 {
 	grid-row: span 4 / span 4;
 }
-.colStart1{
+.colStart1 {
 	grid-column-start: 1;
 }
-.colStart4{
+.colStart4 {
 	grid-column-start: 4;
 }
-.colStart5{
+.colStart5 {
 	grid-column-start: 5;
 }
-.colStart6{
+.colStart6 {
 	grid-column-start: 6;
 }
-.colStart7{
+.colStart7 {
 	grid-column-start: 7;
 }
 
-.rowStart3{
+.rowStart3 {
 	grid-row-start: 3;
 }
-.rowStart4{
+.rowStart4 {
 	grid-row-start: 4;
 }
-.rowStart5{
+.rowStart5 {
 	grid-row-start: 5;
 }
-.rowStart6{
+.rowStart6 {
 	grid-row-start: 6;
 }
-.rowStart7{
+.rowStart7 {
 	grid-row-start: 7;
 }
-.rowStart8{
+.rowStart8 {
 	grid-row-start: 8;
 }
-.rowStart9{
+.rowStart9 {
 	grid-row-start: 9;
 }
-.rowStart10{
+.rowStart10 {
 	grid-row-start: 10;
 }
-.rowStart11{
+.rowStart11 {
 	grid-row-start: 11;
 }
-.rowStart12{
+.rowStart12 {
 	grid-row-start: 12;
 }
-
-
-
-

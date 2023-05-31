@@ -53,7 +53,7 @@ export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext
 						drag='x'
 						dragConstraints={{ left: 0, right: 0 }}
 						dragElastic={1}
-						onDragEnd={(e, { offset, velocity }) => {
+						onDragEnd={(_, { offset, velocity }) => {
 							const swipe = swipePower(offset.x, velocity.x);
 
 							if (swipe < -swipeConfidenceThreshold) {
@@ -71,14 +71,12 @@ export const GalleryOverLay = ({ isHorizontal, url, alt, onClose, onPrev, onNext
 				</div>
 			</AnimatePresence>
 
-			
 			<button
 				onClick={onClose}
 				className='absolute top-5 left-2 md:left-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
 				<img className='w-1/2' src={arrowBack} alt='arrow back icon p-2' />
 			</button>
 
-			
 			<button
 				onClick={prevImgHandler}
 				className='absolute top-1/2 translate-y-[-50%] left-2 md:left-8 bg-black transition-colors duration-300 rounded-full shadow-md flex justify-center items-center w-10 h-10 md:h-16 md:w-16 hover:bg-neutral-900'>
