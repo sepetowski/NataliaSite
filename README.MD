@@ -7,7 +7,6 @@ I have created a stunning website dedicated to Natalia, an aspiring model. Servi
 * React
 * TypeScript
 * Tailwindcss
-* React Redux
 * React Router
 * Framer Motion
 * Vite
