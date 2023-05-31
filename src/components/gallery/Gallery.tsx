@@ -24,7 +24,6 @@ export const Gallery = ({ photos, onPhotoZoom }: Props) => {
 					to={'/'}>
 					Back
 				</Link>
-				<Line isHorizontal={false} left='left-7' />
 				<Line left='left-0' />
 			</nav>
 			<main className='min-h-screen w-full flex flex-col  overflow-x-hidden'>
@@ -32,7 +31,7 @@ export const Gallery = ({ photos, onPhotoZoom }: Props) => {
 
 				<motion.div
 					variants={galleryAnim}
-					className='flex-grow w-full p-4 pl-10 pr-10 md:pl-12 md:pr-12 md:p-12 grid grid-cols-1 grid-rows-12 sm:grid-cols-7 gap-5  '>
+					className='flex-grow w-full p-4 md:p-8 grid grid-cols-1 grid-rows-12 sm:grid-cols-7 gap-5 max-w-[1400px] mx-auto  '>
 					{photos.map((photo) => (
 						<GalleryItem
 							key={photo.id}
